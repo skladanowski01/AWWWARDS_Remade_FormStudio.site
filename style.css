@@ -1,0 +1,453 @@
+:root{
+    --max-width: 1440px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+html, body{
+    background: #000;
+    color: wheat;
+    font-size: 20px;
+    overscroll-behavior: none;    
+}
+body{
+    font-family: "Open Sans", sans-serif;    
+}
+
+/* BUTTON */
+a {
+    cursor: pointer;
+    transition: .45s;
+    text-decoration: none;
+    color: wheat;    
+}
+
+/* SEPARATORS */
+.line__container{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: var(--max-width);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.separator{
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: rgba(211, 175, 13, 0.082);
+}
+.separator:nth-child(1){
+    left: 25%;
+}
+.separator:nth-child(2){
+    left: 50%;
+}
+.separator:nth-child(3){
+    left: 75%;
+}
+/* SEPARATORS END*/
+
+/* MAIN CHARACTER */
+main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.scroll__container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+section{
+    position: relative;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#me{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.title__container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    gap: 4rem;
+}
+.title__header, .title__subheader{
+    font-size: clamp(1.2rem, 12cqi, 10rem);
+    letter-spacing: -.135rem;
+}
+.cta{
+    font-size: clamp(.8rem, 10cqi, 2rem);
+}
+
+/* ABOUT */
+#about{
+    display: flex;   
+    justify-content: center; 
+    align-items: center;
+}
+.about__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    
+}
+.text__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: 100%;
+    width: 65%;
+    margin: auto;
+    text-align: center;
+    text-wrap: balance;
+    letter-spacing: .12rem;
+    line-height: 2;
+    font-size: clamp(1.2rem, 12cqi, 1.6rem);
+    overflow: hidden;   
+}
+.text__up,
+.text__down {             
+    will-change: translate;
+  }
+
+/* VIDEO ABOUT ME */
+#video{
+    display: flex;
+    justify-content: center;
+    height: 200vh;
+}
+.shim{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;    
+}
+.video__sticky{
+    position: sticky;
+    top: 0;
+    height: 50%;
+    width: 100%;      
+}
+.video{    
+    position: absolute;
+    top: 0;
+    left: 0;   
+    width: 100%;
+    height: 100%;    
+    transform: scale(.5);
+    object-fit: cover;
+    will-change: transform;
+}
+.video__text__overlay{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    font-size: clamp(2rem, 10cqi, 18rem);
+    overflow: hidden;
+    width: 100%;
+    gap: 4rem;
+}
+.video__text__overlay p{
+    color: #000;
+}
+
+/* JOBS DONE / PROJECTS */
+#projects{
+    height: 200%;
+    position: relative;
+}
+.projects__sticky{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50%;
+}
+.slider__container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.projects__slider{
+    height: 100%;
+    width: min-content;
+    display: flex;
+    overflow: hidden;
+}
+/* from projects.js */
+.project{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 100%;
+    padding: 3rem 1.5rem 2rem 1rem;    
+}
+.image__container{
+    position: relative;
+    aspect-ratio: 16/12;
+    width: 100%;
+    overflow: hidden;
+}
+.project__image{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(80%);
+}
+.start{
+    justify-content: start;
+}
+.mid{
+    justify-content: center;
+}
+.end{
+    justify-content: end;
+}
+.project__details{
+    display: flex;
+    justify-content: space-between;
+    padding-top: .5rem;
+    width: 100%;
+}
+.project__details p {
+    font-size: 1.2rem;
+}
+
+/* BLOG */
+#blog{
+    height: 300%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.blog__hero,
+.blog__post{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    max-width: var(--max-width);
+    overflow: hidden;
+}
+.text__reveal{
+    overflow: hidden;    
+    line-height: 2;    
+}
+.text__blog{
+    font-size: clamp(6rem, 22cqi, 15rem);
+}
+.text__reveal span{
+    display: inline-block;    
+    transition: .7s;
+    transform: translateY(110%);
+}
+.post{
+    position: relative;
+    width: 50%;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.057);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    will-change: transform;
+}
+.post__image__container{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+.blog__post__img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.post__details{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.post__details p {
+    font-size: .6rem;
+}
+
+/* CIRCLE SECTION */
+#circle__section{
+    position: relative;
+    height: 200%;
+}
+.circle__sticky{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle__container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.circle{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 150vmax;
+    height: 150vmax;
+    background-color: wheat;
+    border-radius: 50% ;
+
+}
+.circle__sticky h3{
+    font-size: clamp(2rem, 13cqi, 14rem);
+    color: #000;
+    z-index: 1;
+    text-align: center;
+
+}
+
+/* DISCOVER SECTION */
+#discover{
+    background-color: wheat;
+    height: 100%;
+}
+.discover__container{    
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column; 
+    overflow: hidden; 
+}
+.discover__container p {
+    color: #000;
+    font-size: clamp(2rem, 10cqi, 3rem);
+    will-change: transform;
+}
+
+/* END VIDEO */
+#end__video{
+    height: 120%;
+    position: relative;
+    display: flex;
+    justify-content: center;    
+}
+.end__video__container{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.end__video{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* FOOTER */
+#footer{
+    height: 50%;
+    background-color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.footer__container{
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__title a span{
+    color: black;
+    display: inline-block;    
+    overflow: hidden;  
+    font-size: clamp(2rem, 12cqi, 6rem);  
+}
+
+
+@media only screen and (max-width: 1100px){
+    p{
+        font-size: .8rem;
+    }
+
+    #projects{
+        height: 400%;
+    }
+
+    .projects__sticky{
+        height: 25%;
+    }
+
+    .project {
+        width: 50vw;
+    }
+}
+@media only screen and (max-width: 600px){
+    #projects{
+        height: 800%;
+    }
+
+    .projects__sticky{
+        height: 12.5%;
+    }
+
+    .project {
+        width:100vw ;
+    }
+
+    .post{
+        width: 75%;
+    }
+} 
