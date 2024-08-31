@@ -21,13 +21,11 @@ body{
 
 /* BUTTON */
 a {
-    cursor: pointer;
-    transition: .45s;
+    cursor: pointer;    
     text-decoration: none;
-    color: wheat;    
-}
-a:hover {
-    text-decoration: underline overline wheat;
+    color: wheat;  
+    padding: 1rem 2rem;  
+    border-radius: 2% 25% 3% 11%; 
 }
 
 /* SEPARATORS */
@@ -144,7 +142,7 @@ section{
 #video{
     display: flex;
     justify-content: center;
-    height: 200vh;
+    height: 200%;
 }
 .shim{
     width: 100%;
@@ -176,14 +174,15 @@ section{
     top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    justify-content: center;
-    font-size: clamp(2rem, 10cqi, 18rem);
+    justify-content: center;    
     overflow: hidden;
     width: 100%;
-    gap: 4rem;
+    gap: 1rem;
 }
 .video__text__overlay p{
     color: #000;
+    font-size: clamp(3.5rem, 10cqi, 18rem);
+    font-weight: bold;
 }
 
 /* JOBS DONE / PROJECTS */
@@ -415,13 +414,12 @@ section{
     align-items: center;
 }
 
-.footer__title a span{
+.footer__title p span{
     color: black;
     display: inline-block;    
     overflow: hidden;  
     font-size: clamp(2rem, 12cqi, 6rem);  
 }
-
 
 @media only screen and (max-width: 1100px){
     p{
